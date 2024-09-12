@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detallexxxx</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <div *ngIf="pokemon">
+      <ion-card-header>
+        <ion-card-title> <h2>{{ pokemon.name.english }}</h2></ion-card-title>
+      </ion-card-header>
+      <div><img [src]="pokemon.image.hires" alt="{{ pokemon.name.english }}" /></div>
+      <ion-card>
+        <ion-card-content>
+          <p>Descripción: {{ pokemon.description }}</p>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <p>Stats</p>
+          <p>HP: {{ pokemon.base?.HP }}</p>
+          <p>Ataque: {{ pokemon.base?.Attack }}</p>
+          <p>Defensa: {{ pokemon.base?.Defense }}</p>
+          <p>Sp. Ataque: {{ pokemon.base?.['Sp. Attack'] }}</p>
+          <p>Sp. Defensa: {{ pokemon.base?.['Sp. Defense'] }}</p>
+          <p>Velocidad: {{ pokemon.base?.Speed }}</p>
+        </ion-card-content>
+      </ion-card>
+  </div>
+  </ion-card>
+
+</ion-content>
